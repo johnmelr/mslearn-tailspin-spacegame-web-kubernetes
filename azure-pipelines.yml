@@ -20,7 +20,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      name: 'ubuntu-latest'
+      name: 'My Pipeline Agent'
     steps:
     - task: Docker@2
       displayName: 'Build and push the image to container registry'
@@ -54,7 +54,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      name: 'My Agent Pool'
+      name: 'My Pipeline Agent'
     environment: 'dev'
     variables:
     - group: Release
