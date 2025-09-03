@@ -54,7 +54,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      vmImage: 'ubuntu-latest'
+      name: 'My Agent Pool'
     environment: 'dev'
     variables:
     - group: Release
