@@ -82,7 +82,6 @@ stages:
             inputs:
               action: deploy
               connectionType: azureResourceManager
-              secretName: $(imagePullSecret)
               dockerRegistryEndpoint: 'Container Registry Connection'
               azureSubscriptionConnection: 'Resource Manager - Tailspin - Space Game'
               azureResourceGroup: 'tailspin-space-game-rg'
