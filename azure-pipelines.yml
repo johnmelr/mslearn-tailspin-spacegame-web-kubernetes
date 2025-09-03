@@ -74,7 +74,7 @@ stages:
               dockerRegistryEndpoint: 'Container Registry Connection'
               azureSubscriptionConnection: 'Resource Manager - Tailspin - Space Game'
               azureResourceGroup: 'tailspin-space-game-rg'
-              kubernetesCluster: 'johnmelraks'
+              kubernetesCluster: 'johnmelrsaks'
               namespace: 'default'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
