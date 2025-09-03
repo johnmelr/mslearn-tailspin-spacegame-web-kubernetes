@@ -64,11 +64,23 @@ stages:
           steps:
           - download: current
             artifact: manifests
-          
+
           - task: KubernetesManifest@1
             displayName: Create imagePullSecret
             inputs:
               action: createSecret
+              connectionType: azureResourceManager
+              secretName: $(imagePullSecret)
+              dockerRegistryEndpoint: 'Container Registry Connection'
+              azureSubscriptionConnection: 'Resource Manager - Tailspin - Space Game'
+              azureResourceGroup: 'tailspin-space-game-rg'
+              kubernetesCluster: 'johnmelrsaks'
+              namespace: 'default'
+          
+          - task: KubernetesManifest@1
+            displayName: Create imagePullSecret
+            inputs:
+              action: deploy
               connectionType: azureResourceManager
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: 'Container Registry Connection'
