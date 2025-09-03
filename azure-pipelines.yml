@@ -10,6 +10,9 @@ variables:
   leaderboardRepository: 'leaderboard'
   imagePullSecret: 'secret'
 
+pool:
+  name: 'My Pipeline Agent'
+  
 stages:
 - stage: 'Build'
   displayName: 'Build and push'
@@ -17,7 +20,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      vmImage: 'ubuntu-latest'
+      name: 'ubuntu-latest'
     steps:
     - task: Docker@2
       displayName: 'Build and push the image to container registry'
