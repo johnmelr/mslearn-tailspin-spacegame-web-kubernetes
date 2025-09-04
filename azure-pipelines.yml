@@ -78,7 +78,7 @@ stages:
               namespace: 'default'
           
           - task: KubernetesManifest@1
-            displayName: Create imagePullSecret
+            displayName: Deploy containers to AKS 
             inputs:
               action: deploy
               connectionType: azureResourceManager
